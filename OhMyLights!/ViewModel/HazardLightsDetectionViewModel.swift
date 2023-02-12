@@ -21,6 +21,35 @@ final class HazardLightsDetectionViewModel: ObservableObject {
     init(model: HazardLightsDetectionModel) {
         self.model = model
     }
+    
+    //With internal modifier for testing
+    func handleActivity(_ activity: CMMotionActivity) {
+        self.isDetectingMotion = true
+        
+        if !self.wasDriving && activity.automotive {
+            self.wasDriving = true
+        }
+        
+        if activity.automotive {
+            // Driving
+            self.userActivityState = .driving
+            if activity.stationary {
+                // Driving but stop somewhere
+                self.userMotionState = .didStopDriving
+            }
+        } else if self.wasDriving {
+            //MARK: Not driving, the user was driving and now is quiet -> ALERT ABOUT HAZARD LIGHTS
+            self.stopMotionDetection()
+            self.userMotionState = .didEndDriving
+        } else if activity.unknown || activity.stationary {
+            //Not driving, the user was no driving and is quiet
+            self.userActivityState = .unknow
+            self.userMotionState = .idle
+        }
+        
+        if activity.walking { self.userActivityState = .walking }
+        if activity.running { self.userActivityState = .running }
+    }
 
 }
 
@@ -31,40 +60,15 @@ private extension HazardLightsDetectionViewModel {
         isDetectingMotion = true
         userMotionState = .idle
         motionActivityManager.startActivityUpdates(to: .main, withHandler: { [weak self] activity in
-            guard let self = self,
-                  let activity = activity else { return }
-            
-            self.isDetectingMotion = true
-            
-            if !self.wasDriving && activity.automotive {
-                self.wasDriving = true
-            }
-            
-            if activity.walking { self.userActivityState = .walking }
-            if activity.running { self.userActivityState = .running }
-            
-            if activity.automotive {
-                // Driving
-                self.userActivityState = .driving
-                if activity.stationary {
-                    // Driving but stop somewhere
-                    self.userMotionState = .didStopDriving
-                }
-            } else if self.wasDriving, activity.stationary {
-                //Not driving, the user was driving and now is quiet
-                self.userMotionState = .didEndDriving
-                self.wasDriving = false
-            } else if activity.stationary {
-                //Not driving, the user was no driving and is quiet
-                self.userActivityState = .unknow
-                self.userMotionState = .idle
-            }
+            guard let self = self, let activity = activity else { return }
+            self.handleActivity(activity)
         })
     }
     
     func stopMotionDetection() {
         motionActivityManager.stopActivityUpdates()
         userMotionState = .unknow
+        userActivityState = .unknow
         isDetectingMotion = false
         self.wasDriving = false
     }
@@ -73,6 +77,7 @@ private extension HazardLightsDetectionViewModel {
 
 //MARK: UI Customization Methods
 extension HazardLightsDetectionViewModel {
+    
     func getText() -> String {
         switch userMotionState {
         case .idle, .unknow:

@@ -16,7 +16,7 @@ final class HazardLightsDetectionModel: ObservableObject {
     let idleText = "Don't worry 😎"
     let drivingText = "Driving 🚗"
     let didStopText = "Driving and Stop 🛑"
-    let didEndDrivingText = "⚠️⚠️⚠️ CHECK HAZARD LIGHTS!!! ⚠️⚠️⚠️"
+    let didEndDrivingText = "⚠️CHECK LIGHTS!!!⚠️"
     
     let startMotionText = "Start Motion Detection"
     let stopMotionText = "Stop Motion Detection"

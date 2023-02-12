@@ -28,8 +28,9 @@ private extension AppDelegate {
                 return
             }
             
-            print("User did accept push notifactions :)")
-            UIApplication.shared.registerForRemoteNotifications()
+            DispatchQueue.main.async {
+              UIApplication.shared.registerForRemoteNotifications()
+            }
         }
     }
     
@@ -42,5 +43,9 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
     }
 }

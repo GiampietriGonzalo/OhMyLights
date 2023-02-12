@@ -18,22 +18,13 @@ struct ContentView: View {
                 Spacer()
                 DigitalClockView()
                 Spacer()
+                
                 Text(viewModel.getText())
                     .font(.largeTitle)
                     .foregroundStyle(.white)
                 
-                Button(action: {
-                    viewModel.didPressButton()
-                }, label: {
-                    Label(viewModel.getButtonText(),
-                          systemImage: viewModel.getColorImageName())
-                })
-                .buttonStyle(.bordered)
-                .foregroundColor(Color("DarkGreyPastel"))
-                .background(Color.white)
-                .cornerRadius(12)
-                Spacer()
-                Spacer()
+                MotionButton(viewModel: viewModel)
+                Spacer(minLength: 315)
                 Label("Status: " + viewModel.userActivityState.rawValue,
                       systemImage: viewModel.getCurrentStatusImage())
                 .foregroundColor(.white)
@@ -49,6 +40,23 @@ struct BackgroundView: View {
     var body: some View {
         viewModel.getBackgroundColor()
             .edgesIgnoringSafeArea(.all)
+    }
+}
+
+fileprivate struct MotionButton: View {
+    @StateObject var viewModel: HazardLightsDetectionViewModel
+    
+    var body: some View {
+        Button(action: {
+            viewModel.didPressButton()
+        }, label: {
+            Label(viewModel.getButtonText(),
+                  systemImage: viewModel.getColorImageName())
+        })
+        .buttonStyle(.bordered)
+        .foregroundColor(Color("DarkGreyPastel"))
+        .background(Color.white)
+        .cornerRadius(12)
     }
 }
 
