@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A4C29D12998EFB500FBA174 /* DigitalClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C29D02998EFB500FBA174 /* DigitalClockView.swift */; };
+		7A4C29D42998F07600FBA174 /* DigitalClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C29D32998F07600FBA174 /* DigitalClockViewModel.swift */; };
 		7AE3E3C1299648BA006EAC5F /* OhMyLightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3C0299648BA006EAC5F /* OhMyLightsApp.swift */; };
 		7AE3E3C5299648BC006EAC5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3E3C4299648BC006EAC5F /* Assets.xcassets */; };
 		7AE3E3C8299648BC006EAC5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3E3C7299648BC006EAC5F /* Preview Assets.xcassets */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A4C29D02998EFB500FBA174 /* DigitalClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockView.swift; sourceTree = "<group>"; };
+		7A4C29D32998F07600FBA174 /* DigitalClockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitalClockViewModel.swift; sourceTree = "<group>"; };
 		7AE3E3BD299648BA006EAC5F /* OhMyLights!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OhMyLights!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE3E3C0299648BA006EAC5F /* OhMyLightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhMyLightsApp.swift; sourceTree = "<group>"; };
 		7AE3E3C4299648BC006EAC5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				7AE3E3D2299649A9006EAC5F /* ContentView.swift */,
+				7A4C29D02998EFB500FBA174 /* DigitalClockView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -93,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				7AE3E3D4299649B8006EAC5F /* HazardLightsDetectionViewModel.swift */,
+				7A4C29D32998F07600FBA174 /* DigitalClockViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,10 +192,12 @@
 			files = (
 				7AE3E3D3299649A9006EAC5F /* ContentView.swift in Sources */,
 				7AE3E3DB299649C4006EAC5F /* HazardLightsDetectionModel.swift in Sources */,
+				7A4C29D42998F07600FBA174 /* DigitalClockViewModel.swift in Sources */,
 				7AE3E3DA299649C4006EAC5F /* UserMotionState.swift in Sources */,
 				7AE3E3C1299648BA006EAC5F /* OhMyLightsApp.swift in Sources */,
 				7AE3E3DD29967809006EAC5F /* AppDelegate.swift in Sources */,
 				7AE3E3D5299649B8006EAC5F /* HazardLightsDetectionViewModel.swift in Sources */,
+				7A4C29D12998EFB500FBA174 /* DigitalClockView.swift in Sources */,
 				7AE3E3D9299649C4006EAC5F /* UserActivityState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

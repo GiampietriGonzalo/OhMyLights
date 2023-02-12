@@ -16,6 +16,8 @@ struct ContentView: View {
             
             VStack {
                 Spacer()
+                DigitalClockView()
+                Spacer()
                 Text(viewModel.getText())
                     .font(.largeTitle)
                     .foregroundStyle(.white)
@@ -30,7 +32,7 @@ struct ContentView: View {
                 .foregroundColor(Color("DarkGreyPastel"))
                 .background(Color.white)
                 .cornerRadius(12)
-                
+                Spacer()
                 Spacer()
                 Label("Status: " + viewModel.userActivityState.rawValue,
                       systemImage: viewModel.getCurrentStatusImage())
