@@ -12,7 +12,7 @@ struct DigitalClockView: View {
     
     var body: some View {
         Text(viewModel.timeString)
-            .font(.system(size: 64, weight: .medium))
+            .font(.system(size: 100, weight: .medium))
             .foregroundColor(.white)
     }
     

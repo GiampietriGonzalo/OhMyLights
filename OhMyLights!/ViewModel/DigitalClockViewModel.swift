@@ -9,7 +9,7 @@ import SwiftUI
 
 final class DigitalClockViewModel: ObservableObject {
     
-    @Published var timeString: String = "00:00:00"
+    @Published var timeString: String = "00:00"
     
     init() {
         startDigitalTime()
