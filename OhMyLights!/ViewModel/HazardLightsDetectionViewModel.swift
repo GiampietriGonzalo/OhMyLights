@@ -8,6 +8,7 @@
 import SwiftUI
 import Combine
 import CoreMotion
+import AudioToolbox
 
 final class HazardLightsDetectionViewModel: ObservableObject {
 
@@ -41,6 +42,7 @@ final class HazardLightsDetectionViewModel: ObservableObject {
             //MARK: Not driving, the user was driving and now is quiet -> ALERT ABOUT HAZARD LIGHTS
             self.stopMotionDetection()
             self.userMotionState = .didEndDriving
+            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
         } else if activity.unknown || activity.stationary {
             //Not driving, the user was no driving and is quiet
             self.userActivityState = .unknow
@@ -48,6 +50,7 @@ final class HazardLightsDetectionViewModel: ObservableObject {
         }
         
         if activity.walking { self.userActivityState = .walking }
+        
         if activity.running { self.userActivityState = .running }
     }
 
@@ -85,7 +88,7 @@ extension HazardLightsDetectionViewModel {
         case .didEndDriving:
             return model.didEndDrivingText
         case .didStopDriving:
-            return model.stopMotionText
+            return model.didStopText
         }
     }
     
