@@ -20,6 +20,7 @@ final class HazardLightsDetectionModel: ObservableObject {
     
     let startMotionText = "Start Motion Detection"
     let stopMotionText = "Stop Motion Detection"
+    let iGotItText = "Ok, I got it!"
     
     let buttonStartMotionImage = "figure.walk.motion"
     let buttonStopMotionImage = "stop.circle.fill"
