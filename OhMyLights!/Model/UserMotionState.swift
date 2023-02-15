@@ -8,6 +8,7 @@
 enum UserMotionState: String {
     case didStopDriving
     case didEndDriving
+    case isDriving
     case idle
     case unknow
 }

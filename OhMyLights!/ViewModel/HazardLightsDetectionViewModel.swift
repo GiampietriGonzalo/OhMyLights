@@ -9,8 +9,9 @@ import SwiftUI
 import Combine
 import CoreMotion
 import AudioToolbox
+import CoreLocation
 
-final class HazardLightsDetectionViewModel: ObservableObject {
+final class HazardLightsDetectionViewModel: NSObject, ObservableObject {
 
     @Published var model: HazardLightsDetectionModel
     @Published var userMotionState: UserMotionState = .unknow
@@ -19,6 +20,14 @@ final class HazardLightsDetectionViewModel: ObservableObject {
     private var isDetectingMotion: Bool = false
     private let motionActivityManager = CMMotionActivityManager()
     private var timer: Timer?
+    private lazy var locationManager: CLLocationManager = {
+        let locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.requestAlwaysAuthorization()
+        locationManager.allowsBackgroundLocationUpdates = true
+        
+        return locationManager
+    }()
     
     init(model: HazardLightsDetectionModel) {
         self.model = model
@@ -50,16 +59,28 @@ final class HazardLightsDetectionViewModel: ObservableObject {
             self.userMotionState = .idle
         }
         
-        if activity.walking { self.userActivityState = .walking }
+        if activity.walking {
+            self.userActivityState = .walking
+            self.userMotionState = .didEndDriving
+            self.reproduceAlert()
+        }
+        
         if activity.running { self.userActivityState = .running }
     }
     
+}
+
+extension HazardLightsDetectionViewModel: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        // Handle new location updates here
+    }
 }
 
 //MARK: Logic Methods
 private extension HazardLightsDetectionViewModel {
     
     func startMotionDetection() {
+        startUpdatingLocation()
         isDetectingMotion = true
         userMotionState = .idle
         wasDriving = false
@@ -67,6 +88,7 @@ private extension HazardLightsDetectionViewModel {
     }
     
     func stopMotionDetection() {
+        stopUpdatingLocation()
         motionActivityManager.stopActivityUpdates()
         userMotionState = .unknow
         userActivityState = .unknow
@@ -83,7 +105,15 @@ private extension HazardLightsDetectionViewModel {
             if self.userMotionState != .didEndDriving { self.timer?.invalidate() }
         }
     }
-
+    
+    func startUpdatingLocation() {
+        locationManager.startUpdatingLocation()
+    }
+    
+    func stopUpdatingLocation() {
+        locationManager.stopUpdatingLocation()
+    }
+    
 }
 
 //MARK: UI Customization Methods
@@ -97,6 +127,8 @@ extension HazardLightsDetectionViewModel {
             return model.didEndDrivingText
         case .didStopDriving:
             return model.didStopText
+        case .isDriving:
+            return model.drivingText
         }
     }
     
@@ -108,6 +140,8 @@ extension HazardLightsDetectionViewModel {
             return model.didEndDrivingBackgroundColor
         case .didStopDriving:
             return model.didStopDrivingBackgroundColor
+        case .isDriving:
+            return model.drivingBackGroundColor
         }
     }
     
