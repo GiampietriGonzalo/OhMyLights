@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-final class HazardLightsDetectionModel: ObservableObject {
+final class HazardLightsDetectionModel {
     let idleBackGroundColor = Color("DarkGreyPastel")
     let drivingBackGroundColor = Color("GreenPastel")
     let didStopDrivingBackgroundColor = Color("OrangePastel")
@@ -24,7 +24,4 @@ final class HazardLightsDetectionModel: ObservableObject {
     
     let buttonStartMotionImage = "figure.walk.motion"
     let buttonStopMotionImage = "stop.circle.fill"
-    
-//    let buttonStartMotionColor = "DarkGreyPastel"
-//    let buttonStopMotionColor = "DarkGreyPastel"
 }

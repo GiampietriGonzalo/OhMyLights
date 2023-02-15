@@ -13,9 +13,12 @@ import CoreLocation
 
 final class HazardLightsDetectionViewModel: NSObject, ObservableObject {
 
-    @Published var model: HazardLightsDetectionModel
+    //MARK: Published properties
     @Published var userMotionState: UserMotionState = .unknow
     @Published var userActivityState: UserActivityState = .unknow
+    
+    //MARK: Util properties
+    private var model: HazardLightsDetectionModel
     private var wasDriving: Bool = false
     private var isDetectingMotion: Bool = false
     private let motionActivityManager = CMMotionActivityManager()
@@ -70,6 +73,7 @@ final class HazardLightsDetectionViewModel: NSObject, ObservableObject {
     
 }
 
+//MARK: CLLocationManagerDelegate
 extension HazardLightsDetectionViewModel: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         // Handle new location updates here
