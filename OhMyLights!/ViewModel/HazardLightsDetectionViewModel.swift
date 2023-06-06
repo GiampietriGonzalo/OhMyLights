@@ -62,12 +62,7 @@ final class HazardLightsDetectionViewModel: NSObject, ObservableObject {
             self.userMotionState = .idle
         }
         
-        if activity.walking {
-            self.userActivityState = .walking
-            self.userMotionState = .didEndDriving
-            self.reproduceAlert()
-        }
-        
+        if activity.walking { self.userActivityState = .walking }
         if activity.running { self.userActivityState = .running }
     }
     
