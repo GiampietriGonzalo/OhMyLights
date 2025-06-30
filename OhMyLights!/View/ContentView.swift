@@ -60,10 +60,9 @@ fileprivate struct MotionButton: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        let model = HazardLightsDetectionModel()
-        let viewModel = HazardLightsDetectionViewModel(model: model)
-        ContentView(viewModel: viewModel)
-    }
+
+#Preview {
+    let model = HazardLightsDetectionModel()
+    let viewModel = HazardLightsDetectionViewModel(model: model)
+    ContentView(viewModel: viewModel)
 }
