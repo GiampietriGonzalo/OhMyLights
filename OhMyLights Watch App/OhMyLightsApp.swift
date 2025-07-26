@@ -11,9 +11,7 @@ import SwiftUI
 struct OhMyLights_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            let model = HazardLightsDetectionModel()
-            let viewModel = HazardLightsDetectionViewModel(model: model)
-            HomeView(viewModel: viewModel)
+            HomeView()
         }
     }
 }

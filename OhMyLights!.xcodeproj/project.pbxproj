@@ -11,7 +11,6 @@
 		7A4C29D42998F07600FBA174 /* DigitalClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C29D32998F07600FBA174 /* DigitalClockViewModel.swift */; };
 		7A4C29DE2998FC1800FBA174 /* OhMyLightsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C29DD2998FC1800FBA174 /* OhMyLightsTests.swift */; };
 		7A4C29E42998FC2800FBA174 /* SimulatedCMMotionActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C29D52998F9BD00FBA174 /* SimulatedCMMotionActivity.swift */; };
-		7AE3E3C1299648BA006EAC5F /* OhMyLightsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3C0299648BA006EAC5F /* OhMyLightsApp.swift */; };
 		7AE3E3C5299648BC006EAC5F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3E3C4299648BC006EAC5F /* Assets.xcassets */; };
 		7AE3E3C8299648BC006EAC5F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE3E3C7299648BC006EAC5F /* Preview Assets.xcassets */; };
 		7AE3E3D3299649A9006EAC5F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D2299649A9006EAC5F /* HomeView.swift */; };
@@ -19,11 +18,9 @@
 		7AE3E3D9299649C4006EAC5F /* UserActivityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D6299649C4006EAC5F /* UserActivityState.swift */; };
 		7AE3E3DA299649C4006EAC5F /* UserMotionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D7299649C4006EAC5F /* UserMotionState.swift */; };
 		7AE3E3DB299649C4006EAC5F /* HazardLightsDetectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D8299649C4006EAC5F /* HazardLightsDetectionModel.swift */; };
-		7AE3E3DD29967809006EAC5F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3DC29967809006EAC5F /* AppDelegate.swift */; };
 		7FF8BEB82E355A2200469768 /* OhMyLights Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 7FF8BE982E355A2100469768 /* OhMyLights Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		7FF8BEC42E355AD800469768 /* HazardLightsDetectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D8299649C4006EAC5F /* HazardLightsDetectionModel.swift */; };
 		7FF8BEC52E355AEE00469768 /* HazardLightsDetectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D4299649B8006EAC5F /* HazardLightsDetectionViewModel.swift */; };
-		7FF8BEC62E355B1300469768 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D2299649A9006EAC5F /* HomeView.swift */; };
 		7FF8BEC72E355B5E00469768 /* UserActivityState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D6299649C4006EAC5F /* UserActivityState.swift */; };
 		7FF8BEC82E355B5E00469768 /* UserMotionState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE3E3D7299649C4006EAC5F /* UserMotionState.swift */; };
 		7FF8BEC92E355B6200469768 /* DigitalClockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4C29D32998F07600FBA174 /* DigitalClockViewModel.swift */; };
@@ -83,7 +80,6 @@
 		7A4C29DD2998FC1800FBA174 /* OhMyLightsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhMyLightsTests.swift; sourceTree = "<group>"; };
 		7A4C29E52999114B00FBA174 /* OhMyLights--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "OhMyLights--Info.plist"; sourceTree = SOURCE_ROOT; };
 		7AE3E3BD299648BA006EAC5F /* OhMyLights!.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OhMyLights!.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AE3E3C0299648BA006EAC5F /* OhMyLightsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OhMyLightsApp.swift; sourceTree = "<group>"; };
 		7AE3E3C4299648BC006EAC5F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7AE3E3C7299648BC006EAC5F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7AE3E3D2299649A9006EAC5F /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -91,7 +87,6 @@
 		7AE3E3D6299649C4006EAC5F /* UserActivityState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserActivityState.swift; sourceTree = "<group>"; };
 		7AE3E3D7299649C4006EAC5F /* UserMotionState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMotionState.swift; sourceTree = "<group>"; };
 		7AE3E3D8299649C4006EAC5F /* HazardLightsDetectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HazardLightsDetectionModel.swift; sourceTree = "<group>"; };
-		7AE3E3DC29967809006EAC5F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7FF8BE982E355A2100469768 /* OhMyLights Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OhMyLights Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF8BEA42E355A2200469768 /* OhMyLights Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OhMyLights Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FF8BEAE2E355A2200469768 /* OhMyLights Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OhMyLights Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +96,7 @@
 		7FF8BE992E355A2100469768 /* OhMyLights Watch App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "OhMyLights Watch App"; sourceTree = "<group>"; };
 		7FF8BEA72E355A2200469768 /* OhMyLights Watch AppTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "OhMyLights Watch AppTests"; sourceTree = "<group>"; };
 		7FF8BEB12E355A2200469768 /* OhMyLights Watch AppUITests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = "OhMyLights Watch AppUITests"; sourceTree = "<group>"; };
+		7FF8BED22E35706B00469768 /* App */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = App; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,11 +174,10 @@
 		7AE3E3BF299648BA006EAC5F /* OhMyLights! */ = {
 			isa = PBXGroup;
 			children = (
+				7FF8BED22E35706B00469768 /* App */,
 				7AE3E3D029964986006EAC5F /* Model */,
 				7AE3E3CF2996497E006EAC5F /* ViewModel */,
 				7AE3E3CE29964967006EAC5F /* View */,
-				7AE3E3C0299648BA006EAC5F /* OhMyLightsApp.swift */,
-				7AE3E3DC29967809006EAC5F /* AppDelegate.swift */,
 				7AE3E3C4299648BC006EAC5F /* Assets.xcassets */,
 				7A4C29E52999114B00FBA174 /* OhMyLights--Info.plist */,
 				7AE3E3C6299648BC006EAC5F /* Preview Content */,
@@ -260,6 +255,9 @@
 			);
 			dependencies = (
 				7FF8BEB72E355A2200469768 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7FF8BED22E35706B00469768 /* App */,
 			);
 			name = "OhMyLights!";
 			productName = "OhMyLights!";
@@ -444,8 +442,6 @@
 				7AE3E3DB299649C4006EAC5F /* HazardLightsDetectionModel.swift in Sources */,
 				7A4C29D42998F07600FBA174 /* DigitalClockViewModel.swift in Sources */,
 				7AE3E3DA299649C4006EAC5F /* UserMotionState.swift in Sources */,
-				7AE3E3C1299648BA006EAC5F /* OhMyLightsApp.swift in Sources */,
-				7AE3E3DD29967809006EAC5F /* AppDelegate.swift in Sources */,
 				7AE3E3D5299649B8006EAC5F /* HazardLightsDetectionViewModel.swift in Sources */,
 				7A4C29D12998EFB500FBA174 /* DigitalClockView.swift in Sources */,
 				7AE3E3D9299649C4006EAC5F /* UserActivityState.swift in Sources */,
@@ -460,7 +456,6 @@
 				7FF8BEC72E355B5E00469768 /* UserActivityState.swift in Sources */,
 				7FF8BEC92E355B6200469768 /* DigitalClockViewModel.swift in Sources */,
 				7FF8BEC82E355B5E00469768 /* UserMotionState.swift in Sources */,
-				7FF8BEC62E355B1300469768 /* HomeView.swift in Sources */,
 				7FF8BECA2E355B6800469768 /* DigitalClockView.swift in Sources */,
 				7FF8BEC52E355AEE00469768 /* HazardLightsDetectionViewModel.swift in Sources */,
 			);
