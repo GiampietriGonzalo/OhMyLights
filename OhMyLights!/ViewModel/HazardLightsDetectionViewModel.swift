@@ -8,8 +8,11 @@
 import SwiftUI
 import Combine
 import CoreMotion
-import AudioToolbox
 import CoreLocation
+
+#if targetEnvironment(iOS)
+import AudioToolbox
+#endif
 
 final class HazardLightsDetectionViewModel: NSObject, ObservableObject {
 
@@ -99,8 +102,10 @@ private extension HazardLightsDetectionViewModel {
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [weak self] _ in
             guard let self = self else { return }
+            #if targetEnvironment(iOS)
             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
             AudioServicesPlayAlertSound(SystemSoundID(1304))
+            #endif
             if self.userMotionState != .didEndDriving { self.timer?.invalidate() }
         }
     }

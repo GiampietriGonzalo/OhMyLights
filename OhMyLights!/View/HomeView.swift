@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  HomeView.swift
 //  BeaconAlert
 //
 //  Created by Gonzalo.Giampietri on 08/02/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct HomeView: View {
     @StateObject var viewModel: HazardLightsDetectionViewModel
     
     var body: some View {
@@ -64,5 +64,5 @@ fileprivate struct MotionButton: View {
 #Preview {
     let model = HazardLightsDetectionModel()
     let viewModel = HazardLightsDetectionViewModel(model: model)
-    ContentView(viewModel: viewModel)
+    HomeView(viewModel: viewModel)
 }

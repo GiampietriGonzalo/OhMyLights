@@ -1,16 +1,14 @@
 //
-//  OhMyLights_App.swift
-//  OhMyLights!
+//  OhMyLightsApp.swift
+//  OhMyLights Watch App
 //
-//  Created by Gonzalo.Giampietri on 10/02/2023.
+//  Created by Gonza Giampietri on 26/07/2025.
 //
 
 import SwiftUI
 
 @main
-struct OhMyLightsApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+struct OhMyLights_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             let model = HazardLightsDetectionModel()
@@ -19,5 +17,3 @@ struct OhMyLightsApp: App {
         }
     }
 }
-
-
