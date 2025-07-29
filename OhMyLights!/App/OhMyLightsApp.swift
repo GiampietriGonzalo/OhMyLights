@@ -15,7 +15,7 @@ struct OhMyLightsApp: App {
         WindowGroup {
             let model = HazardLightsDetectionModel()
             let viewModel = HazardLightsDetectionViewModel(model: model)
-            ContentView(viewModel: viewModel)
+            HomeView(viewModel: viewModel)
         }
     }
 }
